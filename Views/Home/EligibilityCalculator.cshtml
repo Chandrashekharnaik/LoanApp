@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "EligibilityCalculator";
+}
+
+
+
+<style>
+
+    body {
+        background-color: white;
+    }
+
+    #outer {
+        width: 90%;
+        max-width: 600px;
+        background: blue;
+        margin: 0 auto
+    }
+
+    #cover {
+        border: 2px solid #111;
+        padding: 15px 0
+    }
+
+    .main {
+        table-layout: fixed;
+        width: 54%;
+        border: 0;
+        border-collapse: collapse;
+        margin: 0 auto
+    }
+
+        .main td {
+            padding: 5px 4px;
+            vertical-align: auto;
+            border: 0
+        }
+
+        .main input {
+            width: 100%;
+            border: 1px solid #ccc;
+            margin: 2px 0;
+            padding: 0 5%;
+            height: 22px;
+            text-align: right c
+        }
+
+    .ac {
+        text-align: center
+    }
+
+    .b {
+        font-weight: bold
+    }
+
+    .main select {
+        width: 60%;
+        border: 1px solid #ccc;
+        margin: 4px 0;
+        background: #808080;
+        height: 22px
+    }
+
+    .w50 {
+        width: 20%
+    }
+
+    .main button {
+        width: 50%;
+        font-weight: bold;
+        margin: 1px 0
+    }
+
+    h2 {
+        text-align: center;
+    }
+</style>
+
+<h2>EligibilityCalculator</h2>
+
+
+<div class="container-fluid">
+    <script language="javascript" type="text/JavaScript">
+        function findemi() {
+            var amount = document.getElementById('loan1').value;
+            var inst = document.getElementById('months1').value;
+
+
+
+            var Loan = 0;
+            Loan = (amount *0.6 ) * 60;
+
+            Loan = Math.round(Loan, 2);
+            document.getElementById('pay1').value = Loan;
+
+        }
+
+    </script>
+    @*<label class="col-md-offset-4"> Monthly Income </label>  <input type="text" name="text1" id="text1"><br />
+
+
+        <label class="col-md-offset-4">Rate Of Intrest </label>  <input type="text" name="text2" id="text2"> <br />
+
+
+        <input type="button" class="col-md-offset-4" Value="Calculate" onclick="findemi()"><br />
+
+
+        <label class="col-md-offset-4">  Eligibility</label>     <input type="text" id="text4"><br />*@
+    <div id=cover>
+        <form>
+            <table class=main>
+                <col class=w50>
+                <col class=w50>
+                <tr><td>Monthly Income<td><input id="loan1">
+                <tr><td>ROI<td><input id="months1">
+
+                <tr>
+                    <td><button type=reset>Reset</button>
+                    <td>
+                        <button type=button onclick='findemi()'>Submit</button>
+                <tr><td>Eligibility<td><input id="pay1">
+
+            </table>
+        </form>
+    </div>
+
+</div>

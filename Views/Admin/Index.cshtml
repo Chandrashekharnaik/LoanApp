@@ -1,0 +1,97 @@
+﻿@model IEnumerable<LoanApp.Models.LoanApplication>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedCostOfProperty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyIncome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AadharNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PanNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Verified)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approved)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedCostOfProperty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountRequired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlyIncome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AadharNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PanNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Verified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approved)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LoanId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LoanId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LoanId })
+        </td>
+    </tr>
+}
+
+</table>

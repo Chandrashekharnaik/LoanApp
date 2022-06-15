@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "SaveFile";
+}
+
+2>SaveFile</h2>
+
+@using (Html.BeginForm("SaveFile", "LoanApplication", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        upload your Aadhar
+        @Html.TextBox("file", "", new { type = "File" })
+        <br />
+
+        <br />
+        upload your Pan
+        @Html.TextBox("file1", "", new { type = "File" })
+
+
+        <br />
+        <br />
+        Upload Your Collatral
+        @Html.TextBox("file2", "", new { type = "File" })
+
+        <br />
+        <input type="submit" value="Upload" />
+    </div>
+}
+
+
